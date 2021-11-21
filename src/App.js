@@ -1,23 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
-
+import Todo from './components/Todo';
+import alanBtn from "@alan-ai/alan-sdk-web";
+import { useEffect, useState } from 'react';
+import { app, database } from './firebase-config';
+import { addDoc, collection } from '@firebase/firestore';
 function App() {
+  const databaseRef = collection(database, 'todo-list');
+  const [update, setUpdate] = useState(false)
+  useEffect(() => {
+    alanBtn({
+      key: 'c984921562819e47ab2d393cbbd50b932e956eca572e1d8b807a3e2338fdd0dc/stage',
+      onCommand: (commandData) => {
+        addDoc(databaseRef, { item: commandData.data })
+          .then(() => {
+            setUpdate(true);
+          })
+      }
+    });
+  }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Todo databaseRef={databaseRef} update={update} setUpdate={setUpdate} />
     </div>
   );
 }
