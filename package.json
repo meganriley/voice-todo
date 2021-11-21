@@ -2,8 +2,8 @@
   "name": "react-todo-alan-firebase",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://meganriley.github.io/voice-todo/",
   "dependencies": {
-    "homepage": "https://meganriley.github.io/voice-based-todo-list/",
     "@alan-ai/alan-sdk-web": "^1.8.28",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
