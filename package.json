@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "homepage": "https://github.com/meganriley/voice-based-todo-list.git",
+    "homepage": "https://meganriley.github.io/voice-based-todo-list/",
     "@alan-ai/alan-sdk-web": "^1.8.28",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
