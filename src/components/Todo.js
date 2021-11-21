@@ -25,7 +25,7 @@ export default function Todo({ databaseRef, update, setUpdate }) {
     return (
         <div className="todo-main">
             <h2 className="header">Voice-based Todo Application</h2>
-
+            <p> Add items to the list by clicking on the microphone and starting the command with 'Add'</p>
             <div className="todo-card">
                 {todoList.map((todo) => {
                     return (
